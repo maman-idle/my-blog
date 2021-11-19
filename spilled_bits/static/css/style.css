@@ -1,0 +1,81 @@
+.article p{
+    text-indent: 5%;
+}
+
+.fc-0{
+    color:lightslategray;
+}
+
+.fc-1{
+    color: darkslategray;
+}
+
+.fc-2{
+    color: whitesmoke;
+}
+
+.fc-3{
+    color: black;
+}
+
+.f-small{
+    font-size: small;
+}
+
+.f-med{
+    font-size: medium;
+}
+
+.f-xlarge{
+    font-size: x-large;
+}
+
+.f-xxlarge{
+    font-size: xx-large;
+}
+
+.f-xxxlarge{
+    font-size: 43.75rem;
+}
+
+.homepage a, .homepage a:hover, .homepage a:visited{
+    text-decoration: none;
+    color: inherit;
+}
+
+.block{
+    display: block;
+}
+
+.pagination a {
+    float: right;
+    text-decoration: none;
+    padding: 8px 16px;
+    transition: background-color .3s;
+    font-size: 250%;
+}
+  
+.pagination a.active {
+    background-color: black;
+    color: white;
+}
+
+.pagination a:visited:not(.active){
+    color: inherit;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.all-posts .post a{
+    background-color: grey;
+    color: black;
+    transition: background-color .3s;
+    text-decoration: none;
+}
+
+.all-posts .post a:hover:not(.active){
+    background-color: lightslategray;
+    color: whitesmoke;
+}

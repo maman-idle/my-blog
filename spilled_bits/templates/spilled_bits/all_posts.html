@@ -1,0 +1,50 @@
+{% load static %}
+{% include 'common/base.html' %}
+
+{% block content %}
+
+    <div class="bg-light">
+        <a class="mx-3" href="{% url 'home' %}" style="font-size: 500%;">Spilled Bits</a>
+        <span class="f-xlarge">/All_Posts</span>
+    </div>
+
+    <div class="container-fluid">
+        <div class="pagination pull-right mx-2">
+
+            {% if pageSize > 1 %}
+
+                <a href="{% url 'all_posts' 1 %}">&laquo;</a>
+                {% for page in "x"|ljust:pageSize %}  <!--IN RANGE LOOP using template-->
+                    <a href="{% url 'all_posts' forloop.counter %}">{{forloop.counter}}</a>
+                {% endfor %}
+                <a href="{% url 'all_posts' pageSize %}">&raquo;</a>
+
+            {% else %}
+                <a href="#">&laquo;</a>
+                <a href="#">&raquo;</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="container all-posts">
+
+        {% for post in paginatedItems %}
+        <!--POST-->
+        <div class="card mb-3 mx-auto col-8 post">  
+            <a class="card-body" href="{% url 'article' post.slug %}">
+                <p class="f-xxlarge">{{post.title}}</p>                    
+                <p class="fc-3 f-med">Posted on: {{post.date}}</p>
+
+                <small class="fc-3 f-med">category: </small>
+                        {% for category in post.category.all %}  <!-- Accessing M2M items -->
+                            <small class="fc-3 f-med">''{{category}}</small>
+                        {% endfor %}
+            </a>
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <div class="mb-5"></div>
+
+{% endblock %}
