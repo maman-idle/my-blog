@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="jumbotron text-center" style="background-color: black;">
-        <h1 class="homepage"><a href="{% url 'home' %}" style="color: whitesmoke;"> Spilled Bits </a></h1>
+        <h1 class="homepage"><a href="{% url 'home' %}" style="color: whitesmoke; font-size: 7rem;"> Spilled Bits </a></h1>
         <p class="fc-0">Where my random thoughts, scribbles, and other weird stuffs are cached.</p>
     </div>
 
@@ -30,7 +30,7 @@
         </div>
 
         <div class="container-fluid my-5">
-            <a class="btn btn-lg btn-outline-primary col-3 pull-right f-xlarge" type="button" href="{% url 'all_posts' 1 %}">SEE ALL POSTS</a>
+            <a class="btn btn-lg btn-outline-primary col-md-auto pull-right f-xlarge" type="button" href="{% url 'all_posts' 1 %}">SEE ALL POSTS</a>
         </div>
     </div>
 

@@ -41,6 +41,7 @@
 .homepage a, .homepage a:hover, .homepage a:visited{
     text-decoration: none;
     color: inherit;
+    font-size: 13rem;
 }
 
 .block{
