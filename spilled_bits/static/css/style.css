@@ -26,6 +26,10 @@
     font-size: medium;
 }
 
+.f-large{
+    font-size: large;
+}
+
 .f-xlarge{
     font-size: x-large;
 }
@@ -38,11 +42,11 @@
     font-size: 43.75rem;
 }
 
-.homepage a, .homepage a:hover, .homepage a:visited{
+/* .homepage a, .homepage a:hover, .homepage a:visited{
     text-decoration: none;
     color: inherit;
     font-size: 13rem;
-}
+} */
 
 .block{
     display: block;
@@ -80,3 +84,4 @@
     background-color: lightslategray;
     color: whitesmoke;
 }
+

@@ -27,3 +27,6 @@ class Article(models.Model):
         self.slug = slugify(self.title)
         super(Article, self).save()
 
+    def __str__(self) -> str:
+        return self.title
+

@@ -1,5 +1,8 @@
-{% load static %}
-{% include 'common/base.html' %}
+{% extends 'common/base.html' %}
+
+{% block title %}
+    Spilled Bits | {{post.title}}
+{% endblock %}
 
 {% block content %}
 
@@ -23,7 +26,7 @@
         <strong class="f-med">Posted on: {{post.date}}</strong>
     </div>
 
-    <div class="card-body f-xlarge my-4 article">
+    <div class="card-body bg-primary f-xlarge my-4 article">
         {{post.content|linebreaks}}
     </div>
 

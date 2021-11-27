@@ -1,0 +1,21 @@
+<head>
+    <style>
+        .footer .items a{
+            text-decoration: none;
+        }
+
+        .footer .items a:active, .footer .items a:hover{
+            color: lightslategray;
+        }
+    </style>
+</head>
+
+<footer class="footer bg-primary">
+    <div class="d-flex justify-content-center f-large mt-2 items">
+            <a class="fc-2 mx-2" href="{% url 'about' %}">About</a>        
+            <a class="fc-2 mx-2" href="{% url 'email' %}">Send me an Email</a>
+    </div>
+    <div class="d-flex justify-content-center f-large mt-2 items">
+        <a class="fc-2" href="https://bootswatch.com/sketchy/" target="_blank">Theme</a>
+    </div>
+</footer>

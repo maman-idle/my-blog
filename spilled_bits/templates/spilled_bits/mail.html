@@ -1,0 +1,40 @@
+{% extends 'common/base.html' %}
+
+{% block title %}
+    Spilled Bits | Send Mail
+{% endblock %}
+
+{% block content %}
+
+<style>
+    textarea{
+        overflow-y: hidden;
+    }
+</style>
+
+<div class="container">
+
+    <form method="POST" class="my-3" id="email">
+        {% csrf_token %}
+        <div class="my-2 col-md-auto">
+            <label class="f-large" for="email">Email</label>
+            <input class="form-control f-large" type="email" name="email">
+        </div>
+        <div class="my-2 col-md-auto">
+            <label class="f-large" for="subject">Subject</label>
+            <input class="form-control f-large" type="text" name="subject">
+        </div>
+        <div class="my-2">
+            <label class="f-large" for="content">Message</label>            
+        </div>
+        <textarea class="f-large lg-textarea form-control" name="message" id="ta" cols="60" rows="15" form="email" ></textarea>
+
+        <div class="text-center">
+            <button class="btn btn-md btn-outline-primary col-md-auto my-3 f-med" type="submit">Send</button>
+        </div>
+    </form>
+
+</div>
+
+
+{% endblock %}

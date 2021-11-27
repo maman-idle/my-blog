@@ -1,4 +1,8 @@
-{% include 'common/base.html' %}
+{% extends 'common/base.html' %}
+
+{% block title %}
+    Spilled Bits
+{% endblock %}
 
 {% block content %}
     <div class="jumbotron text-center" style="background-color: black;">
@@ -34,4 +38,6 @@
         </div>
     </div>
 
+    {% include 'common/footer.html' %}
 {% endblock %}
+

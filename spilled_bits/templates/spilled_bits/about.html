@@ -1,0 +1,51 @@
+{% extends 'common/base.html' %}
+
+{% block title %}
+    Spilled Bits | About
+{% endblock %}
+
+
+{% block content %}
+
+<style>
+    .article a{
+        text-decoration: none;
+        color: whitesmoke;
+    }
+
+    .article a:hover{
+        color: lightgray;
+    }
+</style>
+
+
+<div class="bg-light container-fluid">
+    <div class="col col-md-auto">
+        <a class="mx-3" href="{% url 'home' %}" style="font-size: 450%;">Spilled Bits</a>
+        <span class="f-xlarge">/about</span>        
+    </div>
+</div>
+
+<div class="container">
+    <div class="d-flex justify-content-center mt-3">
+        <h1 class="fc-2" style="font-size: 4.5rem;">Welcome to the Spilled Bits</h1>
+    </div>
+
+    <div class="card-body bg-primary f-xlarge my-4 article">
+        <p>
+            Hello, my name is Ivan Faturahman. If you are reading this, you probably know about this site from
+            my LinkedIn or CV, so I don't think I need to explain more about myself. And for the most people who read LinkedIn profile or CV, usually are HRD, so good luck
+            on getting the right employee for the vacant position on your company. For the rest of you who somehow get here without knowing from my LinkedIn or CV, well click <a href="https://linkedin.com/in/ivan-faturahman-5825b1169" target="_blank">HERE</a>
+            to get to know me. Cheers!  
+        </p>
+        <p>            
+            I have plan that I'm going to post at least one post in this site every week. And the topic of the post
+            could be either networking or web developing or random thoughts or commentary about stupid stuff or 
+            anything. My personal blog. My rule. That's it, and to whoever willing to spend their time reading
+            my posts, wish you have a good day and welcome to my personal blog. Where my random thoughts, scribbles, and other weird stuffs are cached.     
+        </p>
+    </div>
+
+</div>
+
+{% endblock %}
