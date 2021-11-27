@@ -14,7 +14,6 @@ def Home(request):
 
     return render(request, 'spilled_bits/home.html', context)
 
-
 def ArticleView(request, slug):
 
     post = get_object_or_404(Article, slug=slug)
@@ -23,7 +22,6 @@ def ArticleView(request, slug):
     }
 
     return render(request, 'spilled_bits/article.html', context)
-
 
 def AllPosts(request, page):
 
@@ -55,6 +53,9 @@ def SendMail(request):
         content = f"From: {sender}\n{message}"
         send_mail(subject, content, settings.EMAIL_HOST_USER, ['faturahman.ivan5@gmail.com',], fail_silently=False,)
 
-        return redirect('home')
+        return redirect('feedback')
 
     return render(request, 'spilled_bits/mail.html')
+
+def Feedback(request):
+    return render(request, 'spilled_bits/mail_respond.html')

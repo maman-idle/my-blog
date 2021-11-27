@@ -12,22 +12,29 @@
     }
 </style>
 
+<div class="bg-light container-fluid">
+    <div class="col col-md-auto">
+        <a class="mx-3" href="{% url 'home' %}" style="font-size: 450%;">Spilled Bits</a>
+        <span class="f-xlarge">/mail</span>        
+    </div>
+</div>
+
 <div class="container">
 
     <form method="POST" class="my-3" id="email">
         {% csrf_token %}
         <div class="my-2 col-md-auto">
-            <label class="f-large" for="email">Email</label>
-            <input class="form-control f-large" type="email" name="email">
+            <label class="f-xlarge" for="email">Email</label>
+            <input class="form-control f-large" type="email" name="email" required>
         </div>
         <div class="my-2 col-md-auto">
-            <label class="f-large" for="subject">Subject</label>
-            <input class="form-control f-large" type="text" name="subject">
+            <label class="f-xlarge" for="subject">Subject</label>
+            <input class="form-control f-large" type="text" name="subject" required>
         </div>
         <div class="my-2">
-            <label class="f-large" for="content">Message</label>            
+            <label class="f-xlarge" for="content">Message</label>            
         </div>
-        <textarea class="f-large lg-textarea form-control" name="message" id="ta" cols="60" rows="15" form="email" ></textarea>
+        <textarea class="f-large lg-textarea form-control" name="message" id="ta" cols="60" rows="15" form="email" required></textarea>
 
         <div class="text-center">
             <button class="btn btn-md btn-outline-primary col-md-auto my-3 f-med" type="submit">Send</button>

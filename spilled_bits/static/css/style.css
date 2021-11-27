@@ -42,11 +42,11 @@
     font-size: 43.75rem;
 }
 
-/* .homepage a, .homepage a:hover, .homepage a:visited{
+.homepage a, .homepage a:hover, .homepage a:visited{
     text-decoration: none;
     color: inherit;
     font-size: 13rem;
-} */
+}
 
 .block{
     display: block;

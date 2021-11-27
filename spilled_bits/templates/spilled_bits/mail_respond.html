@@ -1,0 +1,22 @@
+{% extends 'common/base.html' %}
+
+{% block title %}
+    Thank You!
+{% endblock %}
+
+{% block content %}
+
+<div class="bg-light container-fluid">
+    <div class="col col-md-auto">
+        <a class="mx-3" href="{% url 'home' %}" style="font-size: 450%;">Spilled Bits</a>
+        <span class="f-xlarge">/mail/feedback</span>        
+    </div>
+</div>
+
+<div class="container-fluid my-5">
+    <h2 class="display-3 fc-2 text-center">
+        Thank You for Your Input!
+    </h2>
+</div>
+
+{% endblock %}
