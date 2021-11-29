@@ -9,3 +9,4 @@ urlpatterns = [
     path('mail/', views.SendMail, name="email"),
     path('mail/feedback/', views.Feedback, name="feedback")
 ]
+

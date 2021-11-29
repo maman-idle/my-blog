@@ -21,3 +21,5 @@ urlpatterns = [
     path('', include('spilled_bits.urls')),
     path('tinymce/', include('tinymce.urls')),
 ]
+
+handler404 = "spilled_bits.views.PageNotFound"

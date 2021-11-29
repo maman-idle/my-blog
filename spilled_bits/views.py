@@ -59,3 +59,6 @@ def SendMail(request):
 
 def Feedback(request):
     return render(request, 'spilled_bits/mail_respond.html')
+
+def PageNotFound(request, exception):
+    return render(request, 'common/404.html', status=404)
