@@ -31,7 +31,7 @@ def AllPosts(request, page):
     itemEnd = itemStart + itemSizePerPage
     pageSize = math.ceil(posts/itemSizePerPage)
 
-    paginatedItems = Article.objects.all()[itemStart:itemEnd] #Slicing QuerySet to return specific set of items 
+    paginatedItems = Article.objects.all().order_by('-date')[itemStart:itemEnd] #Slicing QuerySet to return specific set of items 
 
     context = {
         'pageSize':pageSize,
