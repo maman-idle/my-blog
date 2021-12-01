@@ -1,9 +1,13 @@
 from django.http import request
+from django.urls import reverse
 from django.shortcuts import get_object_or_404, redirect, render
 from .models import Article
 from django.core.mail import send_mail
 import math
 from django.conf import settings
+
+import dns
+from dns import resolver
 
 def Home(request):
 
@@ -50,15 +54,26 @@ def SendMail(request):
         subject = request.POST.get("subject")
         message = request.POST.get("message")
 
+        domain_name = sender.split('@')[1]
+        resolver = dns.resolver.Resolver()
+        resolver.nameserver = ['8.8.8.8']
+        try: #check wether the email domain is valid or not
+            resolver.resolve(domain_name, 'MX')
+        except:
+            return redirect(reverse('feedback', kwargs={'info':'Invalid Domain'}))
+
         content = f"From: {sender}\n{message}"
         send_mail(subject, content, settings.EMAIL_HOST_USER, ['faturahman.ivan5@gmail.com',], fail_silently=False,)
 
-        return redirect('feedback')
+        return redirect(reverse('feedback', kwargs={'info':"Thank You for Your Input",}))
 
     return render(request, 'spilled_bits/mail.html')
 
-def Feedback(request):
-    return render(request, 'spilled_bits/mail_respond.html')
+def Feedback(request, info):
+    context = {
+        'info':info
+    }
+    return render(request, 'spilled_bits/mail_respond.html', context)
 
 def PageNotFound(request, exception):
     return render(request, 'common/404.html', status=404)

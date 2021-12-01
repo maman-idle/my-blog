@@ -1,7 +1,7 @@
 {% extends 'common/base.html' %}
 
 {% block title %}
-    Thank You!
+    {{info}}
 {% endblock %}
 
 {% block content %}
@@ -13,10 +13,12 @@
     </div>
 </div>
 
-<div class="container-fluid my-5">
-    <h2 class="display-3 fc-2 text-center">
-        Thank You for Your Input!
-    </h2>
-</div>
+{% if info %}
+    <div class="container-fluid my-5">
+        <h2 class="display-3 fc-2 text-center">
+            {{info}}
+        </h2>
+    </div>
+{% endif %}
 
 {% endblock %}
