@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="bg-light container-fluid">
+<div class="bg-light container-fluid mb-5">
     <div class="row justify-content-end mx-3 my-3">
         <a class="col col-md-auto btn sm-btn btn-outline-secondary" href="{% url 'all_posts' 1 %}">Back</a>
     </div>
@@ -31,5 +31,7 @@
     </div>
 
 </div>
+
+{% include 'common/footer.html' %}
 
 {% endblock %}
