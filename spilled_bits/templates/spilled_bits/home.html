@@ -5,13 +5,14 @@
 {% endblock %}
 
 {% block content %}
-    <div class="jumbotron text-center" style="background-color: black;">
+
+    <div class="jumbotron text-center mb-5" style="background-color: black;">
         <h1 class="homepage"><a href="{% url 'home' %}" style="color: whitesmoke; font-size: 7rem;"> Spilled Bits </a></h1>
         <p class="fc-0">Where my random thoughts, scribbles, and other weird stuffs are cached.</p>
     </div>
 
     <div class="container">
-        <div class="row">
+        <div class="row mt-5">
             <div class="col col-md all-posts">
                 {% if articles %}
                     {% for article in articles %}
@@ -33,7 +34,7 @@
             </div>
         </div>
 
-        <div class="container-fluid my-5">
+        <div class="container-fluid mt-5">
             <a class="btn btn-lg btn-outline-primary col-md-auto pull-right f-xlarge" type="button" href="{% url 'all_posts' 1 %}">SEE ALL POSTS</a>
         </div>
     </div>

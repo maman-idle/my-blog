@@ -6,7 +6,7 @@
 
 {% block content %}
 
-    <div class="bg-light container-fluid">
+    <div class="bg-light container-fluid mb-5">
         <a class="mx-3" href="{% url 'home' %}" style="font-size: 450%;">Spilled Bits</a>
         <span class="f-xlarge">/All_Posts</span>        
     </div>
@@ -49,5 +49,7 @@
     </div>
 
     <div class="mb-5"></div>
+
+    {% include 'common/footer.html' %}
 
 {% endblock %}
