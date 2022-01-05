@@ -17,7 +17,7 @@
                 {% if articles %}
                     {% for article in articles %}
                     <div class="card mb-3 post">
-                        <a class="card-body text-center" href="{% url 'article' article.slug %}">
+                        <a class="card-body text-center" href="{% url 'new_article' article.slug %}">
                             <p class="f-xxlarge">{{article.title}}</p>
                             <small class="f-med block">Posted at: {{article.date}}</small>
 

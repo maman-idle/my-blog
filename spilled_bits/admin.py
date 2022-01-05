@@ -6,7 +6,7 @@ from tinymce.widgets import TinyMCE
 
 class articleAdmin(admin.ModelAdmin):
     
-    list_display = ('title', 'date', 'slug')
+    list_display = ('title', 'date', 'status', 'slug')
     search_fields = ('title',)
     exclude = ('slug',)
     filter_horizontal = ('category',)

@@ -14,13 +14,23 @@
     <div class="container-fluid">
         <div class="pagination pull-right mx-2">
 
-            {% if pageSize > 1 %}
+            {% if totalPageSize > 1 %}
 
                 <a href="{% url 'all_posts' 1 %}">&laquo;</a>
-                {% for page in "x"|ljust:pageSize %}  <!--IN RANGE LOOP using template-->
-                    <a href="{% url 'all_posts' forloop.counter %}">{{forloop.counter}}</a>
+
+                {% if prevShowedPages %}
+                    <a href="{% url 'all_posts' prevShowedPages %}">...</a>
+                {% endif %}
+
+                {% for page in listPages %}
+                    <a href="{% url 'all_posts' page %}">{{page}}</a>                    
                 {% endfor %}
-                <a href="{% url 'all_posts' pageSize %}">&raquo;</a>
+
+                {% if nextShowedPages %}
+                    <a href="{% url 'all_posts' nextShowedPages %}">...</a>
+                {% endif %}
+
+                <a href="{% url 'all_posts' totalPageSize %}">&raquo;</a>
 
             {% else %}
                 <a href="#">&laquo;</a>
@@ -34,7 +44,7 @@
         {% for post in paginatedItems %}
         <!--POST-->
         <div class="card mb-3 mx-auto col-8 post">  
-            <a class="card-body" href="{% url 'article' post.slug %}">
+            <a class="card-body" href="{% url 'article' post.slug pageNow %}">
                 <p class="f-xxlarge">{{post.title}}</p>                    
                 <p class="fc-3 f-med">Posted on: {{post.date}}</p>
 
