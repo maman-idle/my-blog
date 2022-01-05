@@ -55,7 +55,8 @@
     transition: background-color .3s;
     font-size: 250%;
 }
-  
+
+ /*  
 .pagination a.active {
     background-color: black;
     color: white;
@@ -68,6 +69,7 @@
 .pagination a:hover:not(.active) {
     background-color: #ddd;
 }
+ */
 
 .all-posts .post a{
     background-color: grey;
