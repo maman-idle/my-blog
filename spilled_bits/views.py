@@ -39,7 +39,7 @@ def AllPosts(request, page):
 
     #Putting articles in pages
     posts = Article.objects.filter(status='Publish').count()
-    itemSizePerPage = 2
+    itemSizePerPage = 5
     itemStart = (page-1) * itemSizePerPage
     itemEnd = itemStart + itemSizePerPage
     totalPageSize = math.ceil(posts/itemSizePerPage)
