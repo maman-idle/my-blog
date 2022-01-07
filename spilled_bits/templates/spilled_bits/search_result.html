@@ -1,0 +1,47 @@
+{% extends 'common/base.html' %}
+
+{% block title %}
+    Spilled Bits | Result for '{{keyword}}'
+{% endblock %}
+
+{% block content%}
+
+    {% if posts %}
+        <div class="bg-light container-fluid mb-5">
+            <a class="mx-3" href="{% url 'home' %}" style="font-size: 450%;">Spilled Bits</a>
+            <span class="f-xlarge">/search-post/result/?keyword={{keyword}}</span>        
+        </div>
+
+        <div class="container">
+            {% for post in posts %}
+                <div class="card mb-3 mx-auto col-8 post">  
+                    <a class="card-body" href="{% url 'article' post.slug 1%}">
+                        <p class="f-xxlarge">{{post.title}}</p>                    
+                        <p class="fc-3 f-med">Posted on: {{post.date}}</p>
+
+                        <small class="fc-3 f-med">category: </small>
+                                {% for category in post.category.all %}  <!-- Accessing M2M items -->
+                                    <small class="fc-3 f-med">''{{category}}</small>
+                                {% endfor %}
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+    {% else %}
+        <div class="container">
+            <div class="d-flex flex-column align-self-center my-5 mx-2">
+                <h1 style="font-size: 8rem;">No Match</h1>
+                <h1 class="f-xxlarge fc-2">
+                    Sorry, no posts with keyword '{{keyword}}' can be found.
+                </h1>
+                <div class="d-flex justify-content-center mt-5">
+                    <a class="btn btn-lg btn-outline-primary f-xlarge" href="{% url 'home' %}">Back</a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% include 'common/footer.html' %}
+
+{% endblock %}

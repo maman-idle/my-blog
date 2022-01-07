@@ -56,21 +56,6 @@
     font-size: 250%;
 }
 
- /*  
-.pagination a.active {
-    background-color: black;
-    color: white;
-}
-
-.pagination a:visited:not(.active){
-    color: inherit;
-}
-
-.pagination a:hover:not(.active) {
-    background-color: #ddd;
-}
- */
-
 .all-posts .post a{
     background-color: grey;
     color: black;
