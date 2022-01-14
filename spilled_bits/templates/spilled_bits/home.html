@@ -1,0 +1,54 @@
+{% extends 'common/base.html' %}
+
+{% block title %}
+    Spilled Bits
+{% endblock %}
+
+{% block content %}
+
+    <div class="jumbotron text-center mb-5" style="background-color: black;">
+        <h1 class="homepage"><a href="{% url 'home' %}" style="color: whitesmoke; font-size: 7rem;"> Spilled Bits </a></h1>
+        <p class="fc-0">Where my random thoughts, scribbles, and other weird stuffs are cached.</p>
+    </div>
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col mx-auto col-md-6 col-lg-5">
+                <form class="d-lg-flex text-center" method="get" action="{% url 'search_post' %}">
+                    <input name="keyword" class="form-control f-large" onfocus="this.value=''" type="text" placeholder="Input post title" required>
+                    <button class="btn btn-md btn-outline-primary my-2 my-sm-0 f-large" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col col-md all-posts">
+                <p class="f-xlarge fc-2"><strong>RECENT POSTS</strong></p>
+                {% if articles %}
+                    {% for article in articles %}
+                    <div class="card mb-3 post">
+                        <a class="card-body text-center" href="{% url 'new_article' article.slug %}">
+                            <p class="f-xxlarge">{{article.title}}</p>
+                            <small class="f-med block">Posted at: {{article.date}}</small>
+
+                            <small class="f-med">category: </small>
+                            {% for category in article.category.all %}  <!-- Accessing M2M items -->
+                                <small class="f-med">''{{category}}</small>
+                            {% endfor %}
+                        </a>
+                    </div>
+                    {% endfor %}                    
+                {% else %}
+                    <p class="fc-1">No record</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="container-fluid mt-5">
+            <a class="btn btn-lg btn-outline-primary col-md-auto pull-right f-xlarge" type="button" href="{% url 'all_posts' 1 %}">SEE ALL POSTS</a>
+        </div>
+    </div>
+
+    {% include 'common/footer.html' %}
+{% endblock %}
+
