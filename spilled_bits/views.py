@@ -6,6 +6,7 @@ from django.core.mail import send_mail
 import math
 from django.conf import settings
 import dns
+from dns import resolver
 
 def Home(request):
 
@@ -110,7 +111,7 @@ def SendMail(request):
         subject = request.POST.get("subject")
         message = request.POST.get("message")
 
-        domain_name = sender.split('@')[1]
+        domain_name = sender.split('@')[1]             
         resolver = dns.resolver.Resolver()
         resolver.nameserver = ['8.8.8.8']
         try: #check wether the email domain is valid or not
