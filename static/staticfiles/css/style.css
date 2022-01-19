@@ -3,6 +3,10 @@ html, body{
     min-height: 100vh;
 }
 
+body{
+    font-weight: normal;
+}
+
 .container{
     min-height: 100%;
 }
