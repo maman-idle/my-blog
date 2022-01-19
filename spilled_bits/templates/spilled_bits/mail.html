@@ -9,6 +9,7 @@
 <style>
     textarea{
         overflow-y: hidden;
+        resize: none;
     }
 </style>
 
@@ -34,7 +35,7 @@
         <div class="my-2">
             <label class="f-xlarge" for="content">Message</label>            
         </div>
-        <textarea class="f-large lg-textarea form-control" name="message" id="ta" cols="60" rows="15" form="email" required></textarea>
+        <textarea class="f-large lg-textarea form-control" name="message" id="ta" cols="60" rows="17" form="email" required></textarea>
 
         <div class="text-center mt-3">
             <button class="btn btn-md btn-outline-primary col-md-auto my-3 f-med" type="submit">Send</button>
@@ -42,7 +43,5 @@
     </form>
 
 </div>
-
-{% include 'common/footer.html' %}
 
 {% endblock %}
