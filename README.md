@@ -1,1 +1,1 @@
-My personal blog, The Spilled-Bits. Built using Django, Bootstrap, and TinyMCE.
+My personal blog, The Spilled-Bits. Built using Django, Bootstrap, SQLite and TinyMCE.
