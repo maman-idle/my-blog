@@ -1,5 +1,3 @@
-from asyncio.windows_events import NULL
-from django.template.defaultfilters import date, title
 from django.urls import reverse
 from django.shortcuts import get_object_or_404, redirect, render
 from .models import Article
