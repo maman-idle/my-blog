@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 from django.template.defaultfilters import date, title
 from django.urls import reverse
 from django.shortcuts import get_object_or_404, redirect, render
@@ -89,15 +90,21 @@ def SearchPost(request):
     if request.method == "GET":
         keyword = request.GET.get('keyword')
 
-        #Search using not case sensitive input AND any word that contains in article's title
-        posts = Article.objects.filter(title__icontains=keyword, status='Publish').order_by('-date') 
-
-        context = {
-            'keyword':keyword,
-            'posts': posts,
-        }
-
-        return render(request, 'spilled_bits/search_result.html', context)
+        #Check if keyword has at least 3 characters
+        if len(keyword) >= 3:
+            #Search using not case sensitive input AND any word that contains in article's title
+            posts = Article.objects.filter(title__icontains=keyword, status='Publish').order_by('-date') 
+            context = {
+                'keyword':keyword,
+                'posts': posts,
+            }
+            return render(request, 'spilled_bits/search_result.html', context)
+        else:
+            context = {
+                'keyword':keyword,
+                'posts': None,
+            }
+            return render(request, 'spilled_bits/search_result.html', context)
 
     return render(request, 'common/404.html', status=404) #Should be changed to 405 status page
 

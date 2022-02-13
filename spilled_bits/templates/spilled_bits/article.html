@@ -7,13 +7,6 @@
 {% block content %}
 
 <div class="bg-light container-fluid mb-5">
-    <div class="row justify-content-end mx-3 my-3">
-        {% if page %}
-            <a class="col col-md-auto btn sm-btn btn-outline-secondary" href="{% url 'all_posts' page %}">Back to All Posts</a>
-        {% else %}
-            <a class="col col-md-auto btn sm-btn btn-outline-secondary" href="{% url 'all_posts' 1 %}">Back to All Posts</a>
-        {% endif %}
-    </div>
     <div class="col col-md-auto">
         <a class="mx-3" href="{% url 'home' %}" style="font-size: 450%;">Spilled Bits</a>
         <span class="f-xlarge">/post</span>
