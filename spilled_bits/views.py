@@ -1,11 +1,13 @@
 from django.urls import reverse
 from django.shortcuts import get_object_or_404, redirect, render
-from .models import Article
+from .models import Article, Category as CateModels
 from django.core.mail import send_mail
 import math
 from django.conf import settings
 import dns
 from dns import resolver
+
+
 
 def Home(request):
 
@@ -105,6 +107,20 @@ def SearchPost(request):
             return render(request, 'spilled_bits/search_result.html', context)
 
     return render(request, 'common/404.html', status=404) #Should be changed to 405 status page
+
+def Category(request, categoryId):
+    
+    posts = Article.objects.filter(category=categoryId)
+    category = CateModels.objects.get(id=categoryId)
+
+    if posts:
+        context = {
+            'posts':posts,
+            'category': category.name
+        }
+        return render(request, 'spilled_bits/category.html', context)
+    else:
+        return render(request, 'common/404.html', status=404)
 
 def About(request):
     return render(request, 'spilled_bits/about.html')

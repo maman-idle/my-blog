@@ -18,6 +18,7 @@ class articleAdmin(admin.ModelAdmin):
 
 class categoryAdmin(admin.ModelAdmin):
     search_fields = ('name',)
+    list_display = ('id','name')
 
 admin.site.register(Article, articleAdmin)
 admin.site.register(Category, categoryAdmin)

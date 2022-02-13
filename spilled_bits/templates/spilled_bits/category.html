@@ -1,0 +1,27 @@
+{% extends 'common/base.html' %}
+
+{% block title %}
+    Spilled Bits | {{category}} Category
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h1 class="f-xxlarge fc-2 mb-5">{{category}} Category</h1>
+
+    {% for post in posts %}
+        <div class="card mb-3 mx-auto col-8 post">  
+            <a class="card-body" href="{% url 'article' post.slug 1%}">
+                <p class="f-xxlarge">{{post.title}}</p>                    
+                <p class="fc-3 f-med">Posted on: {{post.date}}</p>
+
+                <small class="fc-3 f-med">category: </small>
+                        {% for category in post.category.all %}  <!-- Accessing M2M items -->
+                            <small class="fc-3 f-med">''{{category}}</small>
+                        {% endfor %}
+            </a>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

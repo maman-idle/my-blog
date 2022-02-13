@@ -22,15 +22,15 @@
               <li class="nav-item ms-4">
                 <a class="nav-link f-large" href="{% url 'all_posts' 1 %}">Posts</a>
               </li>
-              <!-- <li class="nav-item dropdown ms-4">
+              <li class="nav-item dropdown ms-4">
                 <a class="nav-link dropdown-toggle f-large" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
                 <div class="dropdown-menu f-med">
-                  <a class="dropdown-item " href="#">Networking</a>
-                  <a class="dropdown-item" href="#">Django</a>                  
+                  <a class="dropdown-item " href="{% url 'category' 1 %}">Networking</a>
+                  <a class="dropdown-item" href="{% url 'category' 2 %}">Django</a>                  
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Random</a>
+                  <a class="dropdown-item" href="{% url 'category' 3 %}">Random</a>
                 </div>
-              </li> -->
+              </li>
               <li class="nav-item ms-4">
                 <a class="nav-link f-large" href="{% url 'about' %}">About</a>
               </li>

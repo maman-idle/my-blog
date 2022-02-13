@@ -12,7 +12,7 @@
             <span class="f-xlarge">/search-post/result/?keyword={{keyword}}</span>        
         </div> -->
 
-        <div class="container result">
+        <div class="container mt-5">
             {% for post in posts %}
                 <div class="card mb-3 mx-auto col-8 post">  
                     <a class="card-body" href="{% url 'article' post.slug 1%}">
