@@ -68,7 +68,7 @@ def AllPosts(request, page):
     if showedPages < totalPageSize:
         for startingPage in range(startingPage-1, showedPages):
             listPages.append(startingPage+1)
-    elif showedPages > totalPageSize:
+    elif showedPages >= totalPageSize:
         for startingPage in range(startingPage-1, totalPageSize):
             listPages.append(startingPage+1)
 
